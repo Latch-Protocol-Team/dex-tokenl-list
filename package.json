@@ -10,7 +10,8 @@
   },
   "scripts": {
     "test": "node scripts/check.mjs --dir . --git-ref origin/main",
-    "check:chain": "node scripts/check.mjs --dir . --git-ref origin/main --chain"
+    "check:chain": "node scripts/check.mjs --dir . --git-ref origin/main --chain",
+    "check:stocks": "node scripts/check.mjs --dir . --git-ref origin/main --chain --stocks-only"
   },
   "devDependencies": {
     "@uniswap/token-lists": "^1.0.0-beta.35",

@@ -1,10 +1,10 @@
 {
   "name": "Latch",
-  "timestamp": "2026-09-18T10:43:22Z",
+  "timestamp": "2026-09-18T19:14:03Z",
   "version": {
     "major": 1,
     "minor": 0,
-    "patch": 0
+    "patch": 1
   },
   "keywords": [
     "latch",
@@ -37,7 +37,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "GOOGL",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -55,7 +65,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "AMZN",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -73,7 +93,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "AAPL",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -91,7 +121,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "CRCL",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -109,7 +149,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "COIN",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -127,7 +177,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "META",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -145,7 +205,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "MSFT",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -163,7 +233,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "NVDA",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -181,7 +261,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "PLTR",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -199,7 +289,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "HOOD",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -217,7 +317,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "SPY",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -235,7 +345,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "MSTR",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -253,7 +373,17 @@
         "stock": {
           "issuer": "Dinari (dShares)",
           "ticker": "TSLA",
-          "rebasing": true
+          "rebasing": true,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": false,
+            "rebasing": true
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -270,7 +400,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "GOOGL",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -287,7 +427,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "AMZN",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -304,7 +454,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "AAPL",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -321,7 +481,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "META",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -338,7 +508,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "MSFT",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -355,7 +535,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "MSTR",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -372,7 +562,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "NVDA",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -389,7 +589,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "SNDK",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -406,7 +616,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "SPCX",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     },
@@ -423,7 +643,17 @@
         "stock": {
           "issuer": "Coinbase (B20 tokenized stocks)",
           "ticker": "TSLA",
-          "rebasing": false
+          "rebasing": false,
+          "controls": {
+            "pause": true,
+            "blocklist": true,
+            "allowlist": false,
+            "issuerBurn": true,
+            "upgradeable": true,
+            "uiMultiplier": true,
+            "rebasing": false
+          },
+          "verifiedAt": "2026-09-17"
         }
       }
     }

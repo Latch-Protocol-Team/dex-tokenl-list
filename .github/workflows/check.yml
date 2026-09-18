@@ -8,7 +8,14 @@
 #      a row without a file both fail), and the version bump the standard
 #      requires over origin/main;
 #   2. decimals(), symbol() and name() re-read on chain for every token through
-#      the public endpoints in rpc-endpoints.json (Multicall3), failing on drift;
+#      the public endpoints in rpc-endpoints.json (Multicall3), failing on drift,
+#      AND the stock checks for every entry tagged `stock` (scripts/stocks.mjs):
+#      the documented extension shape, a share-accounting face answering on a
+#      token not marked rebasing, a pause view reading paused, a block/sanction
+#      view refusing Multicall3, and transfer(Multicall3, 1) simulated from a
+#      holder found via Transfer logs (skipped with a message when no holder
+#      exists). The lists are the runtime source of truth for "this token is a
+#      stock", which is why these run here on every PR;
 #   3. the JSON is byte-stable (no trailing whitespace games, one file per chain).
 #
 # Public RPCs rot. If step 2 fails on every token of a chain with a transport
@@ -44,7 +51,7 @@ jobs:
       - name: Schema, chain ids, logos ledger, version bump
         run: node scripts/check.mjs --dir . --git-ref origin/main
 
-      - name: Decimals, symbol and name on chain
+      - name: Decimals, symbol and name on chain; stock entries checked on chain
         env:
           # Optional keyed endpoints, tried first. Never commit one.
           LATCH_RPC_4663: ${{ secrets.LATCH_RPC_4663 }}

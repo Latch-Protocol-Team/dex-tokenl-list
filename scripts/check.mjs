@@ -18,11 +18,27 @@
         previous committed list (`--git-ref`, default HEAD; skipped when the
         list is not in git yet);
      5. with `--chain`: a token whose decimals, symbol or name on chain differ
-        from the list (Multicall3 through the probed public endpoints).
+        from the list (Multicall3 through the probed public endpoints);
+     6. a `stock` entry whose `extensions.stock` is not the documented shape
+        (issuer, ticker, rebasing, the seven `controls` booleans, an optional
+        `verifiedAt`), whose tags disagree with it, or whose issuer is
+        documented as rebasing while the entry says otherwise (scripts/stocks.mjs);
+     7. with `--chain`, for every `stock` entry: a share-accounting face that
+        answers on a token not marked rebasing; a pause view reading paused,
+        or answering while `controls.pause` is false; a block/sanction view
+        (on the token or the registry it names) refusing Multicall3 or the
+        Latch Vault, or answering while `controls.blocklist` is false; and
+        `transfer(Multicall3, 1)` simulated from a holder found via `Transfer`
+        logs not returning true (unless `controls.allowlist` is declared).
+        No holder found is SKIPPED with a message, never a pass.
+
+   The list is the runtime source of truth for "this token is a stock" (owner
+   decision 2026-09-18), which is why 6 and 7 are here and not only in the
+   SDK's tests: a stock is added by a pull request to the published lists.
 
    Usage:
      node scripts/check.mjs [--dir <lists dir>] [--git-ref <ref>] [--chain]
-                            [--rpcs <rpc-endpoints.json>]
+                            [--rpcs <rpc-endpoints.json>] [--stocks-only]
    ============================================================================ */
 
 import { execFileSync } from "node:child_process";
@@ -36,6 +52,7 @@ import addFormats from "ajv-formats";
 import { createPublicClient, fallback, http } from "viem";
 
 import { LOGO_FILE_RE, logoFilesOnDisk, sourcedLogoFiles } from "./sources.mjs";
+import { checkStockOnChain, stockShape } from "./stocks.mjs";
 
 const require = createRequire(import.meta.url);
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
@@ -50,6 +67,8 @@ const DIR = resolve(opt("--dir") ?? join(ROOT, "dist"));
 const LOGOS = join(ROOT, "logos");
 const GIT_REF = opt("--git-ref") ?? "HEAD";
 const CHAIN_CHECK = args.includes("--chain");
+/** With `--chain`: skip the decimals/symbol/name re-read and run only the stock checks (a faster local loop). */
+const STOCKS_ONLY = args.includes("--stocks-only");
 const RPCS_FILE = opt("--rpcs") ?? join(ROOT, "rpc-endpoints.json");
 
 const MULTICALL3 = "0xcA11bde05977b3631167028862bE2a173976CA11";
@@ -124,10 +143,14 @@ async function endpointsFor(chainId) {
   return [...all.filter((u) => !slow.includes(u)), ...slow];
 }
 
+function clientFor(urls) {
+  return createPublicClient({ transport: fallback(urls.map((u) => http(u, { timeout: 20_000, retryCount: 1, retryDelay: 500 })), { rank: false }) });
+}
+
 async function checkOnChain(chainId, tokens) {
   const urls = await endpointsFor(chainId);
   if (urls.length === 0) return [`${chainId}: no RPC endpoint known; set LATCH_RPC_${chainId}`];
-  const client = createPublicClient({ transport: fallback(urls.map((u) => http(u, { timeout: 20_000, retryCount: 1, retryDelay: 500 })), { rank: false }) });
+  const client = clientFor(urls);
   const erc20s = tokens.filter((t) => t.address.toLowerCase() !== NATIVE);
   const drift = [];
   const BATCH = 25;
@@ -157,6 +180,30 @@ async function checkOnChain(chainId, tokens) {
   return drift;
 }
 
+/** 7. the stock checks on chain, for every entry `stockShape` accepted. Returns `{ problems, skipped, lines }`. */
+async function checkStocksOnChain(chainId, stocks) {
+  const problems = [];
+  const skipped = [];
+  const lines = [];
+  if (stocks.length === 0) return { problems, skipped, lines };
+  const urls = await endpointsFor(chainId);
+  if (urls.length === 0) return { problems: [`${chainId}: no RPC endpoint known for the stock checks; set LATCH_RPC_${chainId}`], skipped, lines };
+  const client = clientFor(urls);
+  const head = await client.getBlockNumber();
+  for (const { token, ext } of stocks) {
+    const r = await checkStockOnChain(client, chainId, token, ext, head);
+    problems.push(...r.problems);
+    skipped.push(...r.skipped);
+    const f = r.facts;
+    const holder = f.holder === undefined || f.holder.holder === null ? "no holder" : `holder ${f.holder.holder} (block ${f.holder.block})`;
+    const kv = (xs) => (xs.length === 0 ? "none" : xs.map(([k, v]) => `${k}=${v}`).join(","));
+    lines.push(
+      `  ${token.symbol.padEnd(8)} shares:${f.shareFaces.length === 0 ? "none" : f.shareFaces.join("+")} pause:${kv(f.pause)} block:${kv(f.blocklist)} ${holder}${f.transferToMulticall3 === undefined ? "" : ` transfer(Multicall3,1)=${f.transferToMulticall3}`}`,
+    );
+  }
+  return { problems, skipped, lines };
+}
+
 /* -------------------------------------------------------------------- main --- */
 
 async function main() {
@@ -180,6 +227,7 @@ async function main() {
   }
 
   const summary = [];
+  const skippedAll = [];
   for (const fileName of files) {
     const path = join(DIR, fileName);
     let list;
@@ -261,15 +309,40 @@ async function main() {
     }
 
     /* 5. on chain */
-    if (CHAIN_CHECK) problems.push(...(await checkOnChain(chainId, tokens)));
+    if (CHAIN_CHECK && !STOCKS_ONLY) problems.push(...(await checkOnChain(chainId, tokens)));
 
-    summary.push({ fileName, tokens: tokens.length, version: list.version ? `${list.version.major}.${list.version.minor}.${list.version.patch}` : "?", change, verified: list.extensions?.latch?.verifiedOnChain });
+    /* 6. every stock entry has the documented shape (offline) */
+    const stocks = [];
+    for (const t of tokens) {
+      const ext = stockShape(fileName, t, problems);
+      if (ext !== null) stocks.push({ token: t, ext });
+    }
+
+    /* 7. every stock entry, on chain */
+    let stockLines = [];
+    if (CHAIN_CHECK) {
+      const r = await checkStocksOnChain(chainId, stocks);
+      problems.push(...r.problems);
+      skippedAll.push(...r.skipped);
+      stockLines = r.lines;
+    }
+
+    summary.push({ fileName, tokens: tokens.length, stocks: stocks.length, stockLines, version: list.version ? `${list.version.major}.${list.version.minor}.${list.version.patch}` : "?", change, verified: list.extensions?.latch?.verifiedOnChain });
   }
 
   for (const s of summary) {
-    console.log(`${s.fileName}: ${s.tokens} tokens, v${s.version}, ${s.change} vs ${GIT_REF}${s.verified === false ? ", built OFFLINE (verifiedOnChain: false)" : ""}`);
+    console.log(`${s.fileName}: ${s.tokens} tokens (${s.stocks} stock${s.stocks === 1 ? "" : "s"}), v${s.version}, ${s.change} vs ${GIT_REF}${s.verified === false ? ", built OFFLINE (verifiedOnChain: false)" : ""}`);
+    for (const l of s.stockLines) console.log(l);
   }
-  console.log(`schema: ${schema.$id}${sdkValidate === null ? " (SDK validator not installed; official schema only)" : " + SDK validator"}${CHAIN_CHECK ? "; decimals, symbol and name re-read on chain" : ""}`);
+  console.log(
+    `schema: ${schema.$id}${sdkValidate === null ? " (SDK validator not installed; official schema only)" : " + SDK validator"}${
+      CHAIN_CHECK ? `; ${STOCKS_ONLY ? "" : "decimals, symbol and name re-read on chain; "}stock entries checked on chain (rebasing faces, pause, blocklist, holder transfer)` : "; stock entries checked for shape only"
+    }`,
+  );
+  if (skippedAll.length > 0) {
+    console.log(`\n${skippedAll.length} stock check${skippedAll.length === 1 ? "" : "s"} skipped (not a pass):`);
+    for (const p of skippedAll) console.log(`  - ${p}`);
+  }
   if (problems.length > 0) {
     console.error(`\n${problems.length} problem${problems.length === 1 ? "" : "s"}:`);
     for (const p of problems) console.error(`  - ${p}`);
