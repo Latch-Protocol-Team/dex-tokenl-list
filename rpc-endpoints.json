@@ -1,0 +1,30 @@
+{
+  "56": [
+    "https://56.rpc.thirdweb.com",
+    "https://bsc-dataseed1.ninicoin.io",
+    "https://bsc-dataseed.bnbchain.org",
+    "https://bsc-dataseed1.defibit.io",
+    "https://bsc-rpc.publicnode.com"
+  ],
+  "4663": [
+    "https://robinhood.rpc.blxrbdn.com",
+    "https://rpc-robinhood.blockmachine.io",
+    "https://rpc.ordofi.network",
+    "https://rpc.mainnet.chain.robinhood.com",
+    "https://rpc.nodeflare.app/robinhood/public"
+  ],
+  "8453": [
+    "https://8453.rpc.thirdweb.com",
+    "https://base.drpc.org",
+    "https://base.gateway.tenderly.co",
+    "https://base-mainnet.public.blastapi.io",
+    "https://mainnet.base.org"
+  ],
+  "11155111": [
+    "https://11155111.rpc.thirdweb.com",
+    "https://gateway.tenderly.co/public/sepolia",
+    "https://ethereum-sepolia-rpc.publicnode.com",
+    "https://1rpc.io/sepolia",
+    "https://0xrpc.io/sep"
+  ]
+}

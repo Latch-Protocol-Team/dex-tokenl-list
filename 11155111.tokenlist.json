@@ -1,0 +1,70 @@
+{
+  "name": "Latch",
+  "timestamp": "2026-09-18T10:43:22Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "latch",
+    "dex",
+    "launchpad"
+  ],
+  "tags": {
+    "native": {
+      "name": "Native asset",
+      "description": "The chain gas token, addressed as the zero address in Latch pools."
+    },
+    "test": {
+      "name": "Test token",
+      "description": "A throwaway token with no economic meaning. Never render its balance as money."
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 11155111,
+      "address": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "name": "Sepolia Ether",
+      "symbol": "ETH",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/shared/eth.svg",
+      "tags": [
+        "native"
+      ]
+    },
+    {
+      "chainId": 11155111,
+      "address": "0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14",
+      "decimals": 18,
+      "name": "Wrapped Ether",
+      "symbol": "WETH"
+    },
+    {
+      "chainId": 11155111,
+      "address": "0x5c00ea81EedcED610c5174b9D20F83Ca245e269C",
+      "decimals": 18,
+      "name": "Latch Test USD",
+      "symbol": "ltUSD",
+      "tags": [
+        "test"
+      ]
+    },
+    {
+      "chainId": 11155111,
+      "address": "0xbEf6E0f94Fe1a96390Eb25D32759aad85fD1f067",
+      "decimals": 18,
+      "name": "Latch Test ETH",
+      "symbol": "ltETH",
+      "tags": [
+        "test"
+      ]
+    }
+  ],
+  "extensions": {
+    "latch": {
+      "chainId": 11155111,
+      "verifiedOnChain": true
+    }
+  }
+}

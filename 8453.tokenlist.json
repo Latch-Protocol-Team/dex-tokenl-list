@@ -1,0 +1,437 @@
+{
+  "name": "Latch",
+  "timestamp": "2026-09-18T10:43:22Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "latch",
+    "dex",
+    "launchpad",
+    "stocks"
+  ],
+  "tags": {
+    "rebasing": {
+      "name": "Rebasing",
+      "description": "balanceOf itself is rescaled by the issuer. Not usable as a pool currency in the Latch Vault, which accounts by amount."
+    },
+    "stock": {
+      "name": "Tokenised stock",
+      "description": "An issuer controlled security token. The issuer can pause transfers, upgrade the code and in most designs burn from any holder. See extensions.stock."
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 8453,
+      "address": "0x1a4DfA04a5c8F85eCad6FFd3C211051F8A43E280",
+      "decimals": 18,
+      "name": "Alphabet Inc. Class A - Dinari",
+      "symbol": "GOOGL",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "GOOGL",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xf393d07e6ca9818A601055b4bb3c48A5bb98E701",
+      "decimals": 18,
+      "name": "Amazon.com, Inc. - Dinari",
+      "symbol": "AMZN",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "AMZN",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x41F7A63713e76c0aB800Be03Bae9F17B8A356348",
+      "decimals": 18,
+      "name": "Apple Inc. - Dinari",
+      "symbol": "AAPL",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "AAPL",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xfee9BEe35Fa54BF037EA3B49a6c791b989172dd0",
+      "decimals": 18,
+      "name": "Circle Internet Group, Inc. - Dinari",
+      "symbol": "CRCL",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "CRCL",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xA559c1A28874Bea40056E61cfee29b051B7D8C9d",
+      "decimals": 18,
+      "name": "Coinbase Global, Inc. Class A Common Stock - Dinari",
+      "symbol": "COIN",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "COIN",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xf6e697F80a2c0C77e9C896a23542EFAb2F0d16DF",
+      "decimals": 18,
+      "name": "Meta Platforms, Inc. - Dinari",
+      "symbol": "META",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "META",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xF9011e88d8f1B5BB9B1f0b3BD604D250cf114afB",
+      "decimals": 18,
+      "name": "Microsoft Corporation - Dinari",
+      "symbol": "MSFT",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "MSFT",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x92ECF64fDb76E60b76d78A29Ad4BF9D38B7b1b97",
+      "decimals": 18,
+      "name": "NVIDIA Corporation - Dinari",
+      "symbol": "NVDA",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "NVDA",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x4439039dF7b1215a5FEcc54BeDa747b5C0048fDB",
+      "decimals": 18,
+      "name": "Palantir Technologies Inc. Class A Common Stock - Dinari",
+      "symbol": "PLTR",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "PLTR",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x0c9b4FBfF1971B5B1D7b50B1F3483cC5007C4621",
+      "decimals": 18,
+      "name": "Robinhood Markets, Inc. Class A Common Stock - Dinari",
+      "symbol": "HOOD",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "HOOD",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x8A768Ef1d44939E2C6e36b83A948295962D6f795",
+      "decimals": 18,
+      "name": "SPDR S&P 500 ETF Trust - Dinari",
+      "symbol": "SPY",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "SPY",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x5de98C65A9a3c414550E6663666bc725C23c2E7B",
+      "decimals": 18,
+      "name": "MicroStrategy Inc - Dinari",
+      "symbol": "MSTR",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "MSTR",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0x74Ed07d83999bC5DB0ffd850da0a6Bd782AbD39c",
+      "decimals": 18,
+      "name": "Tesla, Inc. - Dinari",
+      "symbol": "TSLA",
+      "tags": [
+        "stock",
+        "rebasing"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Dinari (dShares)",
+          "ticker": "TSLA",
+          "rebasing": true
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb2000000000000000000002D0BA3164cc74f58B7",
+      "decimals": 8,
+      "name": "Alphabet Inc.",
+      "symbol": "GOOGLc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "GOOGL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb200000000000000000000d9192b6B456483C2E8",
+      "decimals": 8,
+      "name": "Amazon.com Inc.",
+      "symbol": "AMZNc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "AMZN",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb200000000000000000000C2e324d24d7eEcd1fb",
+      "decimals": 8,
+      "name": "Apple Inc.",
+      "symbol": "AAPLc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "AAPL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb2000000000000000000008bC8786B856E61707C",
+      "decimals": 8,
+      "name": "Meta Platforms Inc.",
+      "symbol": "METAc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "META",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xB200000000000000000000Ab99cFa739E253872B",
+      "decimals": 8,
+      "name": "Microsoft Corporation",
+      "symbol": "MSFTc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "MSFT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb2000000000000000000004884b426556b92883d",
+      "decimals": 8,
+      "name": "Strategy Inc.",
+      "symbol": "MSTRc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "MSTR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb20000000000000000000078ee7ce2fE4908108C",
+      "decimals": 8,
+      "name": "NVIDIA Corporation",
+      "symbol": "NVDAc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "NVDA",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb200000000000000000000397293Cb8cda9a10c5",
+      "decimals": 8,
+      "name": "Sandisk Corporation",
+      "symbol": "SNDKc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "SNDK",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb2000000000000000000007b9fcbd005511aCBd5",
+      "decimals": 8,
+      "name": "Space Exploration Technologies Corp.",
+      "symbol": "SPCXc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "SPCX",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 8453,
+      "address": "0xb2000000000000000000001e800a7f5189430cD0",
+      "decimals": 8,
+      "name": "Tesla Inc.",
+      "symbol": "TSLAc",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Coinbase (B20 tokenized stocks)",
+          "ticker": "TSLA",
+          "rebasing": false
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "latch": {
+      "chainId": 8453,
+      "verifiedOnChain": true
+    }
+  }
+}

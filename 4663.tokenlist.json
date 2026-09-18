@@ -1,0 +1,92 @@
+{
+  "name": "Latch",
+  "timestamp": "2026-09-18T10:43:21Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "latch",
+    "dex",
+    "launchpad",
+    "stocks"
+  ],
+  "tags": {
+    "native": {
+      "name": "Native asset",
+      "description": "The chain gas token, addressed as the zero address in Latch pools."
+    },
+    "stock": {
+      "name": "Tokenised stock",
+      "description": "An issuer controlled security token. The issuer can pause transfers, upgrade the code and in most designs burn from any holder. See extensions.stock."
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 4663,
+      "address": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "name": "Ether",
+      "symbol": "ETH",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/shared/eth.svg",
+      "tags": [
+        "native"
+      ]
+    },
+    {
+      "chainId": 4663,
+      "address": "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+      "decimals": 18,
+      "name": "WETH",
+      "symbol": "WETH"
+    },
+    {
+      "chainId": 4663,
+      "address": "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168",
+      "decimals": 6,
+      "name": "Global Dollar",
+      "symbol": "USDG"
+    },
+    {
+      "chainId": 4663,
+      "address": "0xd0601CE157Db5bdC3162BbaC2a2C8aF5320D9EEC",
+      "decimals": 18,
+      "name": "NVIDIA • Robinhood Token",
+      "symbol": "NVDA",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Robinhood",
+          "ticker": "NVDA",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 4663,
+      "address": "0x4a0E65A3EcceC6dBe60AE065F2e7bb85Fae35eEa",
+      "decimals": 18,
+      "name": "Space Exploration Technologies Corp. Class A Common Stock •",
+      "symbol": "SPCX",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Robinhood",
+          "ticker": "SPCX",
+          "rebasing": false
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "latch": {
+      "chainId": 4663,
+      "verifiedOnChain": true
+    }
+  }
+}

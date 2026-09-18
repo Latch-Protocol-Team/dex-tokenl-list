@@ -1,0 +1,61 @@
+# CI for the published Latch token lists. Synced from the Latch monorepo
+# (packages/tokenlists/public/check.yml) by scripts/sync.mjs; edit it there.
+#
+# Three checks on every push and pull request:
+#   1. the official Uniswap token-list schema (ajv) over every <chainId>.tokenlist.json,
+#      plus one chain per file, the logos ledger (a logoURI must point at a file
+#      under logos/ that has a row in logos/SOURCES.md; a file without a row and
+#      a row without a file both fail), and the version bump the standard
+#      requires over origin/main;
+#   2. decimals(), symbol() and name() re-read on chain for every token through
+#      the public endpoints in rpc-endpoints.json (Multicall3), failing on drift;
+#   3. the JSON is byte-stable (no trailing whitespace games, one file per chain).
+#
+# Public RPCs rot. If step 2 fails on every token of a chain with a transport
+# error rather than a value mismatch, the endpoint list needs re-probing in the
+# monorepo (packages/sdk/src/chains/endpoints.ts), not the list.
+
+name: Check token lists
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # The version check diffs against origin/main; a shallow clone of the PR head has no main.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install
+        run: npm ci || npm install
+
+      - name: Schema, chain ids, logos ledger, version bump
+        run: node scripts/check.mjs --dir . --git-ref origin/main
+
+      - name: Decimals, symbol and name on chain
+        env:
+          # Optional keyed endpoints, tried first. Never commit one.
+          LATCH_RPC_4663: ${{ secrets.LATCH_RPC_4663 }}
+          LATCH_RPC_56: ${{ secrets.LATCH_RPC_56 }}
+          LATCH_RPC_8453: ${{ secrets.LATCH_RPC_8453 }}
+          LATCH_RPC_11155111: ${{ secrets.LATCH_RPC_11155111 }}
+        run: node scripts/check.mjs --dir . --git-ref origin/main --chain
+
+      - name: One file per chain, named by it
+        run: |
+          for f in *.tokenlist.json; do
+            id="${f%.tokenlist.json}"
+            case "$id" in ''|*[!0-9]*) echo "::error::$f is not <chainId>.tokenlist.json"; exit 1;; esac
+          done

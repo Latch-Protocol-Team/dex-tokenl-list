@@ -1,0 +1,1270 @@
+{
+  "name": "Latch",
+  "timestamp": "2026-09-18T10:43:20Z",
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "keywords": [
+    "latch",
+    "dex",
+    "launchpad",
+    "stocks"
+  ],
+  "tags": {
+    "stock": {
+      "name": "Tokenised stock",
+      "description": "An issuer controlled security token. The issuer can pause transfers, upgrade the code and in most designs burn from any holder. See extensions.stock."
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 56,
+      "address": "0x10343EF7da3301493D7Ecb647d68A288C6c1Db2F",
+      "decimals": 18,
+      "name": "Applied Optoelectronics",
+      "symbol": "AAOIB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AAOI",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x431a3BEE82E2ca41e49895CbECE5bB0F76A89b7A",
+      "decimals": 18,
+      "name": "Apple",
+      "symbol": "AAPLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AAPL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x1282493EdE6a22753D45Cb2C0fdBd8D35E97555a",
+      "decimals": 18,
+      "name": "Astera Labs",
+      "symbol": "ALABB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "ALAB",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xa304BD78e739C0F777202B3eB73Ac3736d1df801",
+      "decimals": 18,
+      "name": "Applied Materials",
+      "symbol": "AMATB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AMAT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x75Fd4cF6f8392E41E70391D60c90C0D5211603a1",
+      "decimals": 18,
+      "name": "Advanced Micro Devices Inc",
+      "symbol": "AMDB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AMD",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x1a4b499833A79A09ad7Cf1D42D7DacF71e92eb00",
+      "decimals": 18,
+      "name": "Amazon",
+      "symbol": "AMZNB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AMZN",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xD42A79ebb7F527F40fAecD196FFB47aD5e8D6f8C",
+      "decimals": 18,
+      "name": "Arm",
+      "symbol": "ARMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "ARM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xFbfB4f79cFB4C34DCd7C82Bdee5A0Fa199B2e7f9",
+      "decimals": 18,
+      "name": "ASML",
+      "symbol": "ASMLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "ASML",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x58b6F5fEeb8436489F5bf4a56619092B1FA8E777",
+      "decimals": 18,
+      "name": "AST SpaceMobile",
+      "symbol": "ASTSB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "ASTS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x76682c454467b3A1150Ad8b6a92FC5eE2C21d7eD",
+      "decimals": 18,
+      "name": "Broadcom",
+      "symbol": "AVGOB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AVGO",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x9BDC8B470dbf89DbCb123587C6f5E49cCA3463BE",
+      "decimals": 18,
+      "name": "AXT",
+      "symbol": "AXTIB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "AXTI",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x4eF9d3062c7F6ebA4AAE4990c5036598C6eff4ec",
+      "decimals": 18,
+      "name": "Alibaba",
+      "symbol": "BABAB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "BABA",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x5519de00F5388c17d886b97Cb5D2D43a812a82bC",
+      "decimals": 18,
+      "name": "Bloom Energy",
+      "symbol": "BEB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "BE",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x3548Da95a9eFFE481e8604664d75e95821e557F5",
+      "decimals": 18,
+      "name": "BitMine Immersion Technologies",
+      "symbol": "BMNRB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "BMNR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x4902C5ebc598265Ed2212b559B042De8a5Eeec3f",
+      "decimals": 18,
+      "name": "CEA Industries",
+      "symbol": "BNCB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "BNC",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xe81C6bB0266cd68B4F17278531Dd03eA1F12dA4E",
+      "decimals": 18,
+      "name": "Cerebras",
+      "symbol": "CBRSB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "CBRS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x5131859a059B2446AbeeFe0f5d313b3c54Ff3D36",
+      "decimals": 18,
+      "name": "Coherent",
+      "symbol": "COHRB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "COHR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x585BDE7C54ABB5cCD7791F923D6c2187635f3952",
+      "decimals": 18,
+      "name": "Coinbase",
+      "symbol": "COINB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "COIN",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x80f3D493EBCe97e343c53D29a137942416B4ffC0",
+      "decimals": 18,
+      "name": "Circle Internet Group Inc.",
+      "symbol": "CRCLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "CRCL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x6E7D451F9D30327D32020f116Fa79C23B24E9c8D",
+      "decimals": 18,
+      "name": "Credo Technology",
+      "symbol": "CRDOB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "CRDO",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x8C433eCa1be0e2a357015602F63751C768F6f643",
+      "decimals": 18,
+      "name": "Salesforce",
+      "symbol": "CRMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "CRM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x33E7317e17838fEE56b10Fe8D0B9cA6CA3090c95",
+      "decimals": 18,
+      "name": "CoreWeave",
+      "symbol": "CRWVB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "CRWV",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x0e7A51966c66648999d506e1372EFDeA1B78cb0B",
+      "decimals": 18,
+      "name": "Dell",
+      "symbol": "DELLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "DELL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xF2ec508422174Ee564de98187db9359D318AFB6b",
+      "decimals": 18,
+      "name": "Trump Media & Technology Group Corp",
+      "symbol": "DJTB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "DJT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x93862d63fd9Fd488B1328E9b47717d75e994a84B",
+      "decimals": 18,
+      "name": "Roundhill Memory ETF",
+      "symbol": "DRAMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "DRAM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xBE82F76637DBA2C114C41Df856c2C51e522E2Cb8",
+      "decimals": 18,
+      "name": "iShares MSCI South Korea ETF",
+      "symbol": "EWYB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "EWY",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x4af1D41cd9dD950dcA43984b43aaA2A8702714Ac",
+      "decimals": 18,
+      "name": "Fluence Energy",
+      "symbol": "FLNCB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "FLNC",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x740e075cBbEa22a082B9d6679e65e82767875b6A",
+      "decimals": 18,
+      "name": "Corning",
+      "symbol": "GLWB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "GLW",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x46cEeFDa28Dd7207059ed19B0acdc026955bb15C",
+      "decimals": 18,
+      "name": "GameStop",
+      "symbol": "GMEB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "GME",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x3F53De71c126BdaBAe20f9cD64848d317f6C3238",
+      "decimals": 18,
+      "name": "Alphabet",
+      "symbol": "GOOGLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "GOOGL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x1ECfda023C46cA216b5c620eF357A6D0C03951E6",
+      "decimals": 18,
+      "name": "GoPro",
+      "symbol": "GPROB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "GPRO",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x20CCe6656E5F7F79f280E2D0F5dB55b401BDbfCe",
+      "decimals": 18,
+      "name": "Goldman Sachs",
+      "symbol": "GSB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "GS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xee6F4bcc88C2C8583d5a65c7D0C877b464100711",
+      "decimals": 18,
+      "name": "Hims & Hers",
+      "symbol": "HIMSB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "HIMS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xA394dCEa3fd3847fD793afBFd163E2e3858B7c65",
+      "decimals": 18,
+      "name": "Robinhood",
+      "symbol": "HOODB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "HOOD",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xfA273B076Feb8c0FB34e554ae341082323D016A3",
+      "decimals": 18,
+      "name": "IBM",
+      "symbol": "IBMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "IBM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xe614E2fc6C787035FF51f452e8E826Bfd32D5283",
+      "decimals": 18,
+      "name": "Intel Corporation",
+      "symbol": "INTCB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "INTC",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x0735D9904b7e34e6fe39B0f66E00c111b3f2b681",
+      "decimals": 18,
+      "name": "GraniteShares 2X Long INTC ETF",
+      "symbol": "INTWB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "INTW",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xfdc2F2caB77b28f7Ef6c819A404706cfA9bCA33b",
+      "decimals": 18,
+      "name": "IREN Limited",
+      "symbol": "IRENB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "IREN",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x1FFAD32d69c5FEAd99f88C25ca0191Edc3757636",
+      "decimals": 18,
+      "name": "South Korea Bull 3X ETF",
+      "symbol": "KORUB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "KORU",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x64748BeA17b6D19e242ADf20425DE2440c656142",
+      "decimals": 18,
+      "name": "Lumentum Holdings",
+      "symbol": "LITEB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "LITE",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x7425889FE94F9d693E8daefE88BCCed6AcFEf4c0",
+      "decimals": 18,
+      "name": "Meta Platforms",
+      "symbol": "METAB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "META",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x16cd4fe7e8880ECc3ba222795229E20489fc2C76",
+      "decimals": 18,
+      "name": "Marvell Technology",
+      "symbol": "MRVLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MRVL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x80106cb3EAD06659A5ad19DF39D9b4733863B9b0",
+      "decimals": 18,
+      "name": "Microsoft",
+      "symbol": "MSFTB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MSFT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xE87afb3076AeB0f9B14E368DE8145ae6a2826A14",
+      "decimals": 18,
+      "name": "Strategy Inc.",
+      "symbol": "MSTRB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MSTR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xcdf2f3e0fa43C47A6662a91C9E4a7C5f69762699",
+      "decimals": 18,
+      "name": "Micron Technology Inc",
+      "symbol": "MUB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MU",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x0bB3fA77E0809f42948E435F04883C25415e8263",
+      "decimals": 18,
+      "name": "Direxion MU Bull 2X ETF",
+      "symbol": "MUUB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MUU",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x7C26a12f20507E2ceE22CeEBed9e88FDA47f866c",
+      "decimals": 18,
+      "name": "GraniteShares 2X Long MRVL ETF",
+      "symbol": "MVLLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "MVLL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xE256BC2A4F5297F8ba6f043F180a46300eCbCbB1",
+      "decimals": 18,
+      "name": "Nebius",
+      "symbol": "NBISB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "NBIS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xD6829Ea836b6FA224d099D40E54B31262f874631",
+      "decimals": 18,
+      "name": "Netflix",
+      "symbol": "NFLXB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "NFLX",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x7c4d7a180D737Dd5A70d8065a90E6746a69C37EA",
+      "decimals": 18,
+      "name": "Nokia",
+      "symbol": "NOKB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "NOK",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x02Fca66C1D1aFB4E2A7884261eB00F63598a7436",
+      "decimals": 18,
+      "name": "NVIDIA Corp",
+      "symbol": "NVDAB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "NVDA",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x4684D9887fC1c71cBa7baB8E88835CEC217eB598",
+      "decimals": 18,
+      "name": "Oracle",
+      "symbol": "ORCLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "ORCL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x0Ca5D51D0277Bd006fd9607d3E560785EBad8222",
+      "decimals": 18,
+      "name": "Palantir Technologies",
+      "symbol": "PLTRB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "PLTR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x2806a561fC1F9259B2d54A281796Bde0D92762aE",
+      "decimals": 18,
+      "name": "Paypal",
+      "symbol": "PYPLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "PYPL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x5F7A56e877B9130608Bf8BE962621011182fEfE1",
+      "decimals": 18,
+      "name": "Qualcomm",
+      "symbol": "QCOMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "QCOM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xd721c192d612Db77621DF57A9fAb38418033c02E",
+      "decimals": 18,
+      "name": "Quantinuum",
+      "symbol": "QNTB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "QNT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x205812CdBed920aFf76C6580abD681a46D11efc7",
+      "decimals": 18,
+      "name": "Invesqo QQQ",
+      "symbol": "QQQB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "QQQ",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x41622a9125A22767Df8C1dC79FC17299BAc4Bd0b",
+      "decimals": 18,
+      "name": "Reddit",
+      "symbol": "RDDTB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "RDDT",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xC8Da12cbCCE7c45180692a6420b0076e03a5179a",
+      "decimals": 18,
+      "name": "Rocket Lab",
+      "symbol": "RKLBB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "RKLB",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xCA750eF65f295BBECd685Abf54e82CAf297BDB61",
+      "decimals": 18,
+      "name": "SK Hynix",
+      "symbol": "SKHYB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SKHY",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x387dEa1D2772D716d081A29116f3EfFA0fFE1F36",
+      "decimals": 18,
+      "name": "Super Micro Computer",
+      "symbol": "SMCIB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SMCI",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xBE1fceD7047fdCE935F45700727845df2c76877a",
+      "decimals": 18,
+      "name": "VanEck Semiconductor ETF",
+      "symbol": "SMHB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SMH",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x3eE4dF61bd4F867E349BEaE8bFE07bc31b4850fb",
+      "decimals": 18,
+      "name": "Sandisk Corporation",
+      "symbol": "SNDKB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SNDK",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x9e82e3da8f1115B73d24bB24113ab836FfDAb6b6",
+      "decimals": 18,
+      "name": "Tradr 2X Long SNDK ETF",
+      "symbol": "SNXXB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SNXX",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xd97d097a89113fa59b76c572E5b2Eb647E8eefaf",
+      "decimals": 18,
+      "name": "Semicon Bull 3X ETF",
+      "symbol": "SOXLB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SOXL",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xE28Cd11C99AF2df76bb8aDA4Cd0ef3904378280F",
+      "decimals": 18,
+      "name": "Direxion Semiconductor Bear 3X ETF",
+      "symbol": "SOXSB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SOXS",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xbe9D156892E55e7154BcD3cB0FEA677F9D3103E1",
+      "decimals": 18,
+      "name": "SpaceX",
+      "symbol": "SPCXB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SPCX",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x7138b48df7D98D7e3cc221BfE7192D0a178182D8",
+      "decimals": 18,
+      "name": "SPY",
+      "symbol": "SPYB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "SPY",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x462B5F13B7C7748279358962925c5De83BB9E598",
+      "decimals": 18,
+      "name": "ProShares UltraPro QQQ",
+      "symbol": "TQQQB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "TQQQ",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0x5b1910eAaD6450E50f816082Aa078C41F10C292f",
+      "decimals": 18,
+      "name": "Tesla, Inc.",
+      "symbol": "TSLAB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "TSLA",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xAB78b89B5bb00236Be0B4B20704cBfa04EfC711c",
+      "decimals": 18,
+      "name": "TSMC",
+      "symbol": "TSMB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "TSM",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xcd345D4450e04cDeF422A60b97D9265d24e0bcEE",
+      "decimals": 18,
+      "name": "USA Rare Earth",
+      "symbol": "USARB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "USAR",
+          "rebasing": false
+        }
+      }
+    },
+    {
+      "chainId": 56,
+      "address": "0xebe29695F8047C13d36e7a790ca8c1b239FfAD1C",
+      "decimals": 18,
+      "name": "Western Digital",
+      "symbol": "WDCB",
+      "tags": [
+        "stock"
+      ],
+      "extensions": {
+        "stock": {
+          "issuer": "Binance (bStocks)",
+          "ticker": "WDC",
+          "rebasing": false
+        }
+      }
+    }
+  ],
+  "extensions": {
+    "latch": {
+      "chainId": 56,
+      "verifiedOnChain": true
+    }
+  }
+}
