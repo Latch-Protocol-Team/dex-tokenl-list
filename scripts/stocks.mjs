@@ -18,8 +18,16 @@
                 `convertToAssets`, `convertToShares`, `getCurrentMultiplier`,
                 the ERC-4626 `asset`) that ANSWERS, or an issuer documented
                 as rebasing (Dinari, Backed), means the entry MUST say
-                `rebasing: true`. The check can only turn the flag on; it
-                never trusts an absence to turn it off.
+                `rebasing: true` — UNLESS the entry declares
+                `extensions.stock.wraps = { asset, standard: "ERC-4626" }`:
+                an ERC-4626 WRAPPER's own balance is a fixed share count
+                while the asset it wraps rebases. For such an entry the
+                check proves the claim on chain instead: `asset()` must
+                answer exactly `wraps.asset`, a conversion view must answer
+                (it is a vault), and none of `balancePerShare` / `sharesOf` /
+                `getCurrentMultiplier` may answer on the wrapper itself
+                (its OWN balance is not rescaled). The check can only turn
+                the flag on; it never trusts an absence to turn it off.
      pause      the pause views that answer (`tokenPaused`, `paused`,
                 `pauseManager().isTokenPaused(token)`, `pausedFeatures`)
                 must read "not paused", and any that answers means
@@ -39,11 +47,10 @@
    not be observed may still exist.
    ============================================================================ */
 
+import { getDeployment } from "@latchprotocol/sdk";
 import { encodeFunctionData, parseAbi } from "viem";
 
 export const MULTICALL3 = "0xcA11bde05977b3631167028862bE2a173976CA11";
-/** The Latch Vault on 4663; on other chains it is only an arbitrary second contract. */
-const LATCH_VAULT = "0x78e8359c6D34Df797b8A793dE8c7c6bffA97fB6c";
 const ZERO = "0x0000000000000000000000000000000000000000";
 
 export const CONTROL_KEYS = ["pause", "blocklist", "allowlist", "issuerBurn", "upgradeable", "uiMultiplier", "rebasing"];
@@ -67,6 +74,7 @@ const ABI = parseAbi([
   "function isBlacklisted(address) view returns (bool)",
   "function isSanctioned(address) view returns (bool)",
   "function checkIsCompliant(address token, address user) view",
+  "function checkIsCompliant(address user) view",
   "function balancePerShare() view returns (uint256)",
   "function sharesOf(address) view returns (uint256)",
   "function convertToAssets(uint256) view returns (uint256)",
@@ -113,8 +121,18 @@ export function stockShape(fileName, t, problems) {
   const rebasing = ext.rebasing === true || c?.rebasing === true;
   if (rebasing && !tags.includes("rebasing")) problems.push(`${who}: a rebasing stock must carry the rebasing tag`);
   if (!rebasing && tags.includes("rebasing")) problems.push(`${who}: tagged rebasing but extensions.stock says it is not`);
-  if (REBASING_ISSUERS.some((re) => re.test(String(ext.issuer))) && !rebasing) {
-    problems.push(`${who}: issuer "${ext.issuer}" is documented as rebasing (docs/stocks-by-chain.md); the entry must say rebasing: true`);
+  const w = ext.wraps;
+  if (w !== undefined) {
+    if (typeof w !== "object" || w === null || !/^0x[0-9a-fA-F]{40}$/.test(String(w.asset)) || w.standard !== "ERC-4626") {
+      problems.push(`${who}: extensions.stock.wraps must be { asset: <address>, standard: "ERC-4626" }`);
+    } else if (String(w.asset).toLowerCase() === String(t.address).toLowerCase()) {
+      problems.push(`${who}: extensions.stock.wraps.asset is the token itself`);
+    }
+  }
+  /* A wrapper's issuer string still names the rebasing issuer (it wraps THEIR token); the
+     on-chain wrapper proof below, not the issuer's name, decides its rebasing flag. */
+  if (w === undefined && REBASING_ISSUERS.some((re) => re.test(String(ext.issuer))) && !rebasing) {
+    problems.push(`${who}: issuer "${ext.issuer}" is documented as rebasing (docs/stocks-by-chain.md); the entry must say rebasing: true, or declare wraps for an ERC-4626 wrapper`);
   }
   if (String(t.address).toLowerCase() === ZERO) problems.push(`${who}: the native asset cannot be a stock`);
   return ext;
@@ -198,14 +216,33 @@ export async function checkStockOnChain(client, chainId, t, ext, head) {
     ["asset", []],
   ];
   const answered = [];
+  const answers = {};
   for (const [fn, args] of shareFaces) {
     const r = await probe(client, token, fn, args);
-    if (r.ok) answered.push(fn);
+    if (r.ok) {
+      answered.push(fn);
+      answers[fn] = r.data;
+    }
   }
   facts.shareFaces = answered;
   const declaredRebasing = ext.rebasing === true || c.rebasing === true;
-  if (answered.length > 0 && !declaredRebasing) {
-    problems.push(`${who}: answers share-accounting selector(s) ${answered.join(", ")} — a rebasing design; the entry must say rebasing: true`);
+  const wraps = ext.wraps;
+  if (wraps !== undefined && typeof wraps === "object" && wraps !== null) {
+    /* An ERC-4626 wrapper: prove the shape rather than refuse it. Its own balance is a share
+       count; the rebasing token is the one `asset()` names. */
+    const asset = answers.asset === undefined ? null : asAddress(answers.asset);
+    if (asset === null || asset.toLowerCase() !== String(wraps.asset).toLowerCase()) {
+      problems.push(`${who}: declares wraps.asset ${wraps.asset} but asset() answered ${asset ?? "nothing"}`);
+    }
+    if (answers.convertToAssets === undefined && answers.convertToShares === undefined) {
+      problems.push(`${who}: declares an ERC-4626 wrapper but neither convertToAssets nor convertToShares answers`);
+    }
+    const own = ["balancePerShare", "sharesOf", "getCurrentMultiplier"].filter((fn) => answers[fn] !== undefined);
+    if (own.length > 0 && !declaredRebasing) {
+      problems.push(`${who}: declares an ERC-4626 wrapper but answers ${own.join(", ")} itself — its own balance is share-accounted; the entry must say rebasing: true`);
+    }
+  } else if (answered.length > 0 && !declaredRebasing) {
+    problems.push(`${who}: answers share-accounting selector(s) ${answered.join(", ")} — a rebasing design; the entry must say rebasing: true (or declare wraps for an ERC-4626 wrapper)`);
   }
 
   /* --- pause --- */
@@ -233,7 +270,10 @@ export async function checkStockOnChain(client, chainId, t, ext, head) {
 
   /* --- blocklist: the token's own views and the registry it names --- */
   const blockReads = [];
-  const subjects = [MULTICALL3, ...(chainId === 4663 ? [LATCH_VAULT] : [])];
+  /* The Latch Vault is the contract a stock must be able to reach, on every chain the address book
+     records a deployment for; it is read from the SDK, never restated here. */
+  const vault = getDeployment(chainId)?.vault;
+  const subjects = [MULTICALL3, ...(vault === undefined ? [] : [vault])];
   for (const fn of ["isBlocked", "isBlacklisted"]) {
     for (const a of subjects) {
       const r = await probe(client, token, fn, [a]);
@@ -257,9 +297,13 @@ export async function checkStockOnChain(client, chainId, t, ext, head) {
   const comp = await probe(client, token, "compliance");
   if (comp.ok && asAddress(comp.data) !== null && asAddress(comp.data) !== ZERO) {
     for (const a of subjects) {
-      /* reverts UserBlocked / UserSanctioned when blocked; a clean return is "not blocked" */
-      const r = await probe(client, asAddress(comp.data), "checkIsCompliant", [token, a]);
-      blockReads.push([`compliance().checkIsCompliant(token, ${a.slice(0, 6)}…)`, !r.ok && !/no data/.test(r.reason)]);
+      /* Two shapes: Ondo's GM view is `checkIsCompliant(user)`, Binance's compliance is
+         `checkIsCompliant(token, user)`. Both revert (UserBlocked / UserSanctioned) when
+         blocked and return nothing when not; a shape that does not exist reverts too, so
+         "blocked" means EVERY shape reverted with data, never that one selector is missing. */
+      const one = await probe(client, asAddress(comp.data), "checkIsCompliant", [a]);
+      const r = one.ok || /no data/.test(one.reason) ? one : await probe(client, asAddress(comp.data), "checkIsCompliant", [token, a]);
+      blockReads.push([`compliance().checkIsCompliant(${r === one ? "" : "token, "}${a.slice(0, 6)}…)`, !r.ok && !/no data/.test(r.reason)]);
     }
   }
   facts.blocklist = blockReads;

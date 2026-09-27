@@ -1,10 +1,10 @@
 {
   "name": "Latch",
-  "timestamp": "2026-09-18T19:14:03Z",
+  "timestamp": "2026-09-27T02:59:32Z",
   "version": {
     "major": 1,
     "minor": 1,
-    "patch": 0
+    "patch": 1
   },
   "keywords": [
     "latch",
@@ -162,6 +162,7 @@
       "decimals": 18,
       "name": "GameStop • Robinhood Token",
       "symbol": "GME",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/4663/0x1b0E319c6A659F002271B69dB8A7df2F911c153E.png",
       "tags": [
         "stock"
       ],
@@ -216,6 +217,7 @@
       "decimals": 18,
       "name": "Reddit • Robinhood Token",
       "symbol": "RDDT",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/4663/0x05b37Fb53A299a1b874A619e1c4C404D52C36F4C.png",
       "tags": [
         "stock"
       ],
@@ -243,6 +245,7 @@
       "decimals": 18,
       "name": "Costco • Robinhood Token",
       "symbol": "COST",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/4663/0x4EA005168D7F09a7A0Ba9D1DEf21a479950E44C2.svg",
       "tags": [
         "stock"
       ],

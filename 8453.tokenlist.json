@@ -1,10 +1,10 @@
 {
   "name": "Latch",
-  "timestamp": "2026-09-18T19:14:03Z",
+  "timestamp": "2026-09-27T02:59:32Z",
   "version": {
     "major": 1,
     "minor": 0,
-    "patch": 1
+    "patch": 2
   },
   "keywords": [
     "latch",
@@ -393,6 +393,7 @@
       "decimals": 8,
       "name": "Alphabet Inc.",
       "symbol": "GOOGLc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb2000000000000000000002D0BA3164cc74f58B7.png",
       "tags": [
         "stock"
       ],
@@ -420,6 +421,7 @@
       "decimals": 8,
       "name": "Amazon.com Inc.",
       "symbol": "AMZNc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb200000000000000000000d9192b6B456483C2E8.png",
       "tags": [
         "stock"
       ],
@@ -447,6 +449,7 @@
       "decimals": 8,
       "name": "Apple Inc.",
       "symbol": "AAPLc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb200000000000000000000C2e324d24d7eEcd1fb.png",
       "tags": [
         "stock"
       ],
@@ -474,6 +477,7 @@
       "decimals": 8,
       "name": "Meta Platforms Inc.",
       "symbol": "METAc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb2000000000000000000008bC8786B856E61707C.png",
       "tags": [
         "stock"
       ],
@@ -501,6 +505,7 @@
       "decimals": 8,
       "name": "Microsoft Corporation",
       "symbol": "MSFTc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xB200000000000000000000Ab99cFa739E253872B.png",
       "tags": [
         "stock"
       ],
@@ -528,6 +533,7 @@
       "decimals": 8,
       "name": "Strategy Inc.",
       "symbol": "MSTRc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb2000000000000000000004884b426556b92883d.png",
       "tags": [
         "stock"
       ],
@@ -555,6 +561,7 @@
       "decimals": 8,
       "name": "NVIDIA Corporation",
       "symbol": "NVDAc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb20000000000000000000078ee7ce2fE4908108C.png",
       "tags": [
         "stock"
       ],
@@ -582,6 +589,7 @@
       "decimals": 8,
       "name": "Sandisk Corporation",
       "symbol": "SNDKc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb200000000000000000000397293Cb8cda9a10c5.png",
       "tags": [
         "stock"
       ],
@@ -609,6 +617,7 @@
       "decimals": 8,
       "name": "Space Exploration Technologies Corp.",
       "symbol": "SPCXc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb2000000000000000000007b9fcbd005511aCBd5.png",
       "tags": [
         "stock"
       ],
@@ -636,6 +645,7 @@
       "decimals": 8,
       "name": "Tesla Inc.",
       "symbol": "TSLAc",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/8453/0xb2000000000000000000001e800a7f5189430cD0.png",
       "tags": [
         "stock"
       ],
