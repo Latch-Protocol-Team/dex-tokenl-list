@@ -1,10 +1,10 @@
 {
   "name": "Latch",
-  "timestamp": "2026-09-27T02:59:32Z",
+  "timestamp": "2026-09-27T11:02:48Z",
   "version": {
     "major": 1,
-    "minor": 0,
-    "patch": 2
+    "minor": 1,
+    "patch": 0
   },
   "keywords": [
     "latch",
@@ -13,6 +13,10 @@
     "stocks"
   ],
   "tags": {
+    "native": {
+      "name": "Native asset",
+      "description": "The chain gas token, addressed as the zero address in Latch pools."
+    },
     "rebasing": {
       "name": "Rebasing",
       "description": "balanceOf itself is rescaled by the issuer. Not usable as a pool currency in the Latch Vault, which accounts by amount."
@@ -23,6 +27,24 @@
     }
   },
   "tokens": [
+    {
+      "chainId": 8453,
+      "address": "0x0000000000000000000000000000000000000000",
+      "decimals": 18,
+      "name": "Ether",
+      "symbol": "ETH",
+      "logoURI": "https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/logos/shared/eth.svg",
+      "tags": [
+        "native"
+      ]
+    },
+    {
+      "chainId": 8453,
+      "address": "0x4200000000000000000000000000000000000006",
+      "decimals": 18,
+      "name": "Wrapped Ether",
+      "symbol": "WETH"
+    },
     {
       "chainId": 8453,
       "address": "0x1a4DfA04a5c8F85eCad6FFd3C211051F8A43E280",

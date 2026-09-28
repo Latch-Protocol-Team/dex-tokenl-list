@@ -18,7 +18,7 @@ directly will be regenerated over. Send the change to the source tables instead
 | Ethereum Sepolia | 11155111 | 4 | 1.0.0 | `https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/11155111.tokenlist.json` |
 | Robinhood Chain | 4663 | 11 | 1.1.1 | `https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/4663.tokenlist.json` |
 | BNB Smart Chain | 56 | 73 | 1.0.1 | `https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/56.tokenlist.json` |
-| Base | 8453 | 23 | 1.0.2 | `https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/8453.tokenlist.json` |
+| Base | 8453 | 25 | 1.1.0 | `https://raw.githubusercontent.com/Latch-Protocol-Team/dex-tokenl-list/main/8453.tokenlist.json` |
 
 Load one by URL in any wallet or interface that accepts a token list, or through
 `@latchprotocol/sdk`:
