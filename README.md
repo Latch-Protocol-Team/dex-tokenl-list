@@ -1,6 +1,38 @@
-# Latch token lists
+<p align="center">
+  <a href="https://latches.fun">
+    <img src="assets/banner-1280x720.webp" alt="Token lists. Latch Protocol: one file per chain, read from the chain." width="100%">
+  </a>
+</p>
 
-Token lists for the Latch Protocol DEX and launchpad, one file per chain, in the
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/latch-lockup.png">
+    <img src="assets/latch-lockup-onlight.png" alt="Latch Protocol" height="56">
+  </picture>
+</h1>
+
+<p align="center"><strong>The Latch token lists.</strong><br>
+One file per chain, in the standard Token Lists format, with every token re-read from the chain before it is published.</p>
+
+<p align="center">
+  <a href="https://latches.fun">Site</a> ·
+  <a href="https://docs.latches.fun">Docs</a> ·
+  <a href="https://testnet.latches.fun/app">Try the app</a> ·
+  <a href="https://latches.fun/ecosystem">Ecosystem</a> ·
+  <a href="https://github.com/Latch-Protocol-Team/latch-contracts">Contracts</a> ·
+  <a href="https://github.com/Latch-Protocol-Team/latch-sdk">SDK</a> ·
+  <a href="https://blog.latches.fun">Blog</a>
+</p>
+
+<p align="center">
+  <a href="https://x.com/Latchesdotfun">X</a> ·
+  <a href="https://t.me/latchprotocol">Telegram</a> ·
+  <a href="https://t.me/LatchDeploys">Launch alerts</a>
+</p>
+
+---
+
+Token lists for the Latch Protocol DEX and Launchpad, one file per chain, in the
 [Uniswap Token Lists](https://github.com/Uniswap/token-lists) standard
 (`https://uniswap.org/tokenlist.schema.json`). MIT licensed.
 
@@ -181,7 +213,35 @@ npm run check:stocks
 `rpc-endpoints.json` lists the public RPC endpoints the chain check uses, copied
 from the SDK's probed table. Set `LATCH_RPC_<chainId>` to put your own first.
 
+## Where these lists are used
+
+<img src="assets/golem-inspect-512.png" alt="The Lock Knight, Latch's mascot, inspecting a token" width="160" align="right">
+
+- **Every swap box** on Latch, on hosted Launchpads and DEXes, and in the widgets, for a token's
+  name, symbol, decimals and logo.
+- **Stock pairs.** A list is where an interface learns that a token is a tokenised stock, who
+  issued it and what powers the issuer holds over it.
+- **Your own app.** Any wallet or interface that accepts a token list can load one by its URL.
+
+A listing says what a token is. It does not say that a token is safe to hold.
+
+## Repositories
+
+| Repository | What it is | Licence |
+|---|---|---|
+| [`dex-tokenl-list`](https://github.com/Latch-Protocol-Team/dex-tokenl-list) | This repository: the published token lists | MIT |
+| [`latch-contracts`](https://github.com/Latch-Protocol-Team/latch-contracts) | The contracts a Latch is built against | GPL-2.0-or-later |
+| [`latch-sdk`](https://github.com/Latch-Protocol-Team/latch-sdk) | TypeScript SDK: deployments, reads, launch building, market data, token lists | MIT |
+
 ## Licence
 
 MIT. See `LICENSE`. The logos under `logos/` remain the marks of their owners
-and are redistributed here as published by them, per the ledger.
+and are redistributed here as published by them, per the ledger. The images under `assets/` are
+Latch Protocol's own.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/powered-by-latch-dark.png">
+    <img src="assets/powered-by-latch-light.png" alt="Powered by Latch" height="36">
+  </picture>
+</p>
